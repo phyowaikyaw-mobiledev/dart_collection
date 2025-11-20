@@ -1,8 +1,8 @@
 void main() {
-  second("Andrew", 23); // =>Positional Parameter
+  second("Andrew", 23); // =>Positional Parameter/ Argument
 }
 
-void second(String name, int age) // =>Positional Parameter
+void second(String name, int age) // =>Positional Parameter/ Argument
 {
   print("Name is $name & Age is $age");
 }

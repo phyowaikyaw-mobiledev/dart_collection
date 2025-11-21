@@ -59,4 +59,11 @@ void main() {
   │ - name: "Aung Aung"    │ ← Local variable (temporary)
   └────────────────────────┘
 
+  -> 2 variables with same name in different scopes
+  -> this.name = Class-level variable
+  -> name = Local variable (closer/priority)
+  -> Local variable shadows (hides) class variable
+
+  ** Key Rule: When local and class variables have the same name, use this. to access the class variable. **
+
 */

@@ -60,6 +60,6 @@ Index:  0         1      2      3        4
   print(safeCars);  // [Toyota, LandCruiser] - no error!
   
   // If you used ... instead of ...? with null - ERROR!
-  // var errorCars = ["Toyota", ...nullNames];  // ❌ ERROR!
+  // var errorCars = ["Toyota", ...nullNames];  //  ERROR!
 ---------------------------------------------------------------------------
 */

@@ -102,7 +102,7 @@ void main() {
   print("New.staticGetAge: ${New.staticGetAge}"); // Output: 23
 
   // Way 2: Through an object (works but not recommended for static members)
-  print("n1.age (via object): ${n1.age}"); // Output: 23 (same as New.age)
+  //print("n1.age (via object): ${n1.age}"); // Output: 23 (same as New.age)
 
   // ============ CALLING NON-STATIC METHODS ============
   print("\n===== Calling Non-Static Methods =====");

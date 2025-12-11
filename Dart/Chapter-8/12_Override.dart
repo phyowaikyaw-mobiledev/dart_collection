@@ -1,5 +1,3 @@
-import 'dart:async';
-
 class Hr {
   String name = "Gyra";
   int age = 38;

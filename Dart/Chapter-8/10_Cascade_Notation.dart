@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 class AA {
   output() {
     print("This is output Method");

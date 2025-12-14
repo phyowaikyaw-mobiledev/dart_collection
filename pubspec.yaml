@@ -1,0 +1,7 @@
+name: dart_collection_packages
+
+environment:
+  sdk: ^3.8.0
+
+dependencies:
+  http: ^1.6.0

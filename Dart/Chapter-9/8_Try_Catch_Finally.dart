@@ -1,5 +1,15 @@
 import 'dart:io';
 
+var fileName = "test.txt";
+
+void main() async {
+  FileHandler handler = new FileHandler();
+  var result = await handler.deleteFile(fileName);
+  print(result);
+  // var result1 = await handler.readFile(fileName);
+  // print(result1);
+}
+
 class FileHandler {
   Future<bool> writeFile(String filePath, String data) async {
     File f = new File(filePath);

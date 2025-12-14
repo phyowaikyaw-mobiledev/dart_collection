@@ -1,5 +1,3 @@
-import 'dart:async';
-
 mixin AA {
   String name = "Andrew";
   outPut() {

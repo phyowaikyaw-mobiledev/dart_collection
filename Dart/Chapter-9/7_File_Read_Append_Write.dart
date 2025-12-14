@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'FileHandler.dart';
 
 var fileName = "test.txt";
 
@@ -26,4 +25,24 @@ void main() async {
   //  var bol = await writeFile("text.txt", para );
 
   // var result = bol ? "success" : "fail";
+}
+
+class FileHandler {
+  Future<bool> writeFile(String filePath, String data) async {
+    File f = new File(filePath);
+    await f.writeAsString(data);
+    return true;
+  }
+
+  Future<bool> appendFile(String filePath, String data) async {
+    File f = new File(filePath);
+    await f.writeAsString(data, mode: FileMode.append);
+    return true;
+  }
+
+  Future<String> readFile(String filePath) async {
+    File f = new File(filePath);
+    var data = await f.readAsString();
+    return data;
+  }
 }

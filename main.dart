@@ -14,7 +14,7 @@ void main() async {
         var decodedData = jsonDecode(rawData)['results'];
         List<dynamic> lisy = decodedData as List;
         List<User> users = lisy.map((u) => User.from(u)).toList();
-        users.forEach((user) => print(user.picture?.thumbnail));
+        users.forEach((user) => print(user.location?.city));
       })
       .catchError((e) => print(e));
 }

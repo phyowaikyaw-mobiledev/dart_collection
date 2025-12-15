@@ -3,24 +3,24 @@ class User {
   Name? name;
   Location? location;
   Login? login;
-  DOB? dob;
+  Dob? dob;
   Registered? registered;
   Id? id;
   Picture? picture;
 
   User({
-    this.gender,
-    this.email,
-    this.phone,
-    this.cell,
-    this.nat,
-    this.name,
-    this.location,
-    this.login,
-    this.dob,
-    this.registered,
-    this.id,
-    this.picture,
+    required this.gender,
+    required this.email,
+    required this.phone,
+    required this.cell,
+    required this.nat,
+    required this.name,
+    required this.location,
+    required this.login,
+    required this.dob,
+    required this.registered,
+    required this.id,
+    required this.picture,
   });
 
   factory User.from(dynamic data) {
@@ -30,17 +30,13 @@ class User {
       phone: data['phone'],
       cell: data['cell'],
       nat: data['nat'],
-      name: data['name'] != null ? Name.from(data['name']) : null,
-      location: data['location'] != null
-          ? Location.from(data['location'])
-          : null,
-      login: data['login'] != null ? Login.from(data['login']) : null,
-      dob: data['dob'] != null ? DOB.from(data['dob']) : null,
-      registered: data['registered'] != null
-          ? Registered.from(data['registered'])
-          : null,
-      id: data['id'] != null ? Id.from(data['id']) : null,
-      picture: data['picture'] != null ? Picture.from(data['picture']) : null,
+      name: Name.from(data['name']),
+      location: Location.from(data['location']),
+      login: Login.from(data['login']),
+      dob: Dob.from(data['dob']),
+      registered: Registered.from(data['registered']),
+      id: Id.from(data['id']),
+      picture: Picture.from(data['picture']),
     );
   }
 }
@@ -48,7 +44,7 @@ class User {
 class Name {
   String? title, first, last;
 
-  Name({this.title, this.first, this.last});
+  Name({required this.title, required this.first, required this.last});
 
   factory Name.from(dynamic data) {
     return Name(title: data['title'], first: data['first'], last: data['last']);
@@ -58,42 +54,38 @@ class Name {
 class Location {
   Street? street;
   String? city, state, country;
+  dynamic postcode;
   Coordinates? coordinates;
   Timezone? timezone;
-  dynamic postcode;
 
   Location({
-    this.street,
-    this.city,
-    this.state,
-    this.country,
-    this.postcode,
-    this.coordinates,
-    this.timezone,
+    required this.street,
+    required this.city,
+    required this.state,
+    required this.country,
+    required this.postcode,
+    required this.coordinates,
+    required this.timezone,
   });
 
   factory Location.from(dynamic data) {
     return Location(
-      street: data['street'] != null ? Street.from(data['street']) : null,
+      street: Street.from(data['street']),
       city: data['city'],
       state: data['state'],
       country: data['country'],
       postcode: data['postcode'],
-      coordinates: data['coordinates'] != null
-          ? Coordinates.from(data['coordinates'])
-          : null,
-      timezone: data['timezone'] != null
-          ? Timezone.from(data['timezone'])
-          : null,
+      coordinates: Coordinates.from(data['coordinates']),
+      timezone: Timezone.from(data['timezone']),
     );
   }
 }
 
 class Street {
-  String? name;
   int? number;
+  String? name;
 
-  Street({this.number, this.name});
+  Street({required this.number, required this.name});
 
   factory Street.from(dynamic data) {
     return Street(number: data['number'], name: data['name']);
@@ -103,7 +95,7 @@ class Street {
 class Coordinates {
   String? latitude, longitude;
 
-  Coordinates({this.latitude, this.longitude});
+  Coordinates({required this.latitude, required this.longitude});
 
   factory Coordinates.from(dynamic data) {
     return Coordinates(
@@ -116,7 +108,7 @@ class Coordinates {
 class Timezone {
   String? offset, description;
 
-  Timezone({this.offset, this.description});
+  Timezone({required this.offset, required this.description});
 
   factory Timezone.from(dynamic data) {
     return Timezone(offset: data['offset'], description: data['description']);
@@ -127,13 +119,13 @@ class Login {
   String? uuid, username, password, salt, md5, sha1, sha256;
 
   Login({
-    this.uuid,
-    this.username,
-    this.password,
-    this.salt,
-    this.md5,
-    this.sha1,
-    this.sha256,
+    required this.uuid,
+    required this.username,
+    required this.password,
+    required this.salt,
+    required this.md5,
+    required this.sha1,
+    required this.sha256,
   });
 
   factory Login.from(dynamic data) {
@@ -149,14 +141,14 @@ class Login {
   }
 }
 
-class DOB {
+class Dob {
   String? date;
   int? age;
 
-  DOB({this.date, this.age});
+  Dob({required this.date, required this.age});
 
-  factory DOB.from(dynamic data) {
-    return DOB(date: data['date'], age: data['age']);
+  factory Dob.from(dynamic data) {
+    return Dob(date: data['date'], age: data['age']);
   }
 }
 
@@ -164,7 +156,7 @@ class Registered {
   String? date;
   int? age;
 
-  Registered({this.date, this.age});
+  Registered({required this.date, required this.age});
 
   factory Registered.from(dynamic data) {
     return Registered(date: data['date'], age: data['age']);
@@ -174,7 +166,7 @@ class Registered {
 class Id {
   String? name, value;
 
-  Id({this.name, this.value});
+  Id({required this.name, required this.value});
 
   factory Id.from(dynamic data) {
     return Id(name: data['name'], value: data['value']);
@@ -184,7 +176,7 @@ class Id {
 class Picture {
   String? large, medium, thumbnail;
 
-  Picture({this.large, this.medium, this.thumbnail});
+  Picture({required this.large, required this.medium, required this.thumbnail});
 
   factory Picture.from(dynamic data) {
     return Picture(
@@ -194,3 +186,7 @@ class Picture {
     );
   }
 }
+
+/*
+   
+*/
